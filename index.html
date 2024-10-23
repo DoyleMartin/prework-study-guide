@@ -2,21 +2,86 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="/assets/bowtie-cat.png" />
     <title>Prework Study Guide</title>
+    <style>
+      body {
+          font-family: Arial, sans-serif;
+          margin: 0;
+          padding: 20px;
+          background-color: #f4f4f4;
+      }
+      h1 {
+          text-align: center;
+          color: #333;
+      }
+      ul {
+          list-style-type: none;
+          padding: 0;
+      }
+      li {
+          background-color: #fff;
+          margin: 10px 0;
+          padding: 15px;
+          border: 1px solid #ddd;
+          border-radius: 5px;
+      }
+      #suggestion {
+          margin-top: 20px;
+          background-color: #e0f7fa;
+          padding: 15px;
+          border-radius: 5px;
+          font-weight: bold;
+          text-align: center;
+      }
+      button{
+          margin-top: 10px;
+          margin-left: 40%;
+          padding: 10px;
+          border-radius: 10px;
+          cursor:pointer;
+      }
+      button:hover{
+          background-color: black;
+          color: #FFF;
+          border-color:#f4f4f4;
+          border:0px;
+
+      }
+    </style>
   </head>
   <body>
-    <header id="header">
-      <h1>Prework Study Guide</h1>
-      <img src="./assets/bowtie-cat.png" alt="Profile image of cat wearing a bow tie." />
-    </header>
-    <main>
-      <!-- Student code goes here -->
-    </main>
+    <h1>Prework Study Guide</h1>
 
-    <footer>
-      <p>I can code!</p>
-    </footer>
+    <ul>
+      <li><strong>HTML:</strong> Learn how to structure a webpage.</li>
+      <li>
+        <strong>CSS:</strong> Understand styling and how to make your webpage
+        look good.
+      </li>
+      <li>
+        <strong>JavaScript:</strong> Get familiar with the basics of programming
+        and interactivity on websites.
+      </li>
+      <li>
+        <strong>Git:</strong> Learn version control and how to collaborate with
+        others.
+      </li>
+    </ul>
+
+    <div id="suggestion">Click the button to get a study suggestion!</div>
+
+    <button onclick="suggestTopic()">What should I study first?</button>
+
+    <script>
+      const topics = ["HTML", "CSS", "JavaScript", "Git"];
+
+      function suggestTopic() {
+        const randomIndex = Math.floor(Math.random() * topics.length);
+        const suggestionElement = document.getElementById("suggestion");
+        suggestionElement.innerText = `You should start by studying ${topics[randomIndex]} first!`;
+      }
+    </script>
   </body>
 </html>
